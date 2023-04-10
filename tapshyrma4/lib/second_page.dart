@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+  
+
+class IamRich extends StatefulWidget {
+  const IamRich ({super.key});
+  @override
+  State<IamRich> createState() => _IamRichState();
+}
+class _IamRichState extends State<IamRich> {
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(backgroundColor: Colors.yellow,
+      appBar: AppBar(backgroundColor: Colors.yellow, 
+      title: const Center(
+        child: Text("Тапшырма 3", style: TextStyle(
+          color: Colors.black),
+          ),
+          )
+       ),
+       body: Center(
+       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:  [
+          const Text("I'm Rich", style: TextStyle(fontSize: 48,fontFamily: "Sofia"),
+     
+          ),
+          Image.asset("assets/imeges/brilliant.png"),
+         ],),
+       ),
+    );
+  } 
+}
