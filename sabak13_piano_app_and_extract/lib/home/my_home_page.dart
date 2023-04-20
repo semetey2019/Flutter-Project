@@ -14,7 +14,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Extract Widget'),
+          backgroundColor: Colors.pinkAccent,
+          title: const Center(child: Text('Extract Widget')),
         ),
         body: Center(
           child: Column(
@@ -22,15 +23,18 @@ class _MyHomePageState extends State<MyHomePage> {
               Column(
                 children: const [
                   ContainerWidget(
+                    colordunAty: Colors.green,
                     conteinerdinTexti: 'container1',
                     conteinerdinTexti2: 'sabak6',
                     icon: Icons.ac_unit_rounded,
-                    image: '',
+                    image:
+                        'https://avatars.mds.yandex.net/i?id=44fe5d0763a13b1ce00596262b86fcbb0438ded1-9182174-images-thumbs&n=13',
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   ContainerWidget(
+                    colordunAty: Colors.yellow,
                     conteinerdinTexti: 'conteiner2',
                     conteinerdinTexti2: 'sabak5',
                     icon: Icons.add_box,
@@ -41,28 +45,34 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 10,
                   ),
                   ContainerWidget(
+                    colordunAty: Colors.purple,
                     conteinerdinTexti: 'conteiner3',
                     conteinerdinTexti2: 'sabak4',
                     icon: Icons.access_time_filled,
-                    image: '',
+                    image:
+                        'https://avatars.mds.yandex.net/i?id=cd050444ff495d6ceb199245e4c79742a6aecd53-9225226-images-thumbs&n=13',
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   ContainerWidget(
+                    colordunAty: Colors.red,
                     conteinerdinTexti: 'conteiner4',
                     conteinerdinTexti2: 'sabak3',
                     icon: Icons.access_alarm,
-                    image: '',
+                    image:
+                        'https://avatars.mds.yandex.net/i?id=94b901a43b0063e18aa09a0d897507be8854247e-4546582-images-thumbs&n=13',
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   ContainerWidget(
+                    colordunAty: Colors.lightGreen,
                     conteinerdinTexti: 'conteiner5',
                     conteinerdinTexti2: 'sabak2',
                     icon: Icons.add_call,
-                    image: '',
+                    image:
+                        'https://avatars.mds.yandex.net/i?id=e0fe2e00e3826a3b472918caf9ef7b91-5342977-images-thumbs&n=13',
                   ),
                   SizedBox(
                     height: 10,
