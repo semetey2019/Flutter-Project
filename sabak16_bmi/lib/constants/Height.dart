@@ -7,11 +7,15 @@ class Height extends StatelessWidget {
       {super.key,
       required this.text,
       required this.text1,
-      required this.text2});
+      required this.text2,
+      required this.height,
+      required this.onChanged});
 
   final String text;
   final String text1;
   final String text2;
+  final double height;
+  final void Function(double) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +44,13 @@ class Height extends StatelessWidget {
         SizedBox(
           width: 300,
           child: CupertinoSlider(
-              value: 180,
-              min: 45,
-              max: 240,
-              activeColor: AppColors.whiteColor,
-              thumbColor: AppColors.pinkColor,
-              onChanged: (value) {}),
+            value: height,
+            min: 45,
+            max: 240,
+            activeColor: AppColors.whiteColor,
+            thumbColor: AppColors.pinkColor,
+            onChanged: onChanged,
+          ),
         ),
       ],
     );

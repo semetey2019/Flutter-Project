@@ -17,14 +17,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool isTrue = true;
+  int weight = 60;
+  int age = 35;
+  double height = 180;
   // int currentindex = 0;
   // @override
   // int slader = 1;
-  // int card2 = 1;
+
   // void change() {
   //   setState(() {
   //     slader = currentindex++;
-  //     card2 = currentindex++;
   //   });
   //   if (slader.toInt() == true) {
   //     showDialog<void>(
@@ -114,19 +116,55 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(height: 18),
-            const StatusCard(
-              child: Height(text: AppTexts.height, text1: "180", text2: "cm"),
+            StatusCard(
+              child: Height(
+                text: AppTexts.height,
+                text1: "${height.toInt()}",
+                text2: "cm",
+                onChanged: (value) {
+                  setState(() {
+                    height = value;
+                  });
+                },
+                height: height,
+              ),
             ),
             const SizedBox(height: 18),
             Expanded(
               child: Row(
-                children: const [
+                children: [
                   StatusCard(
-                    child: WeightAge(text: AppTexts.weight, san: "60"),
+                    child: WeightAge(
+                      text: AppTexts.weight,
+                      san: " $weight ",
+                      removebasuu: () {
+                        setState(() {
+                          weight--;
+                        });
+                      },
+                      addbasuu: () {
+                        setState(() {
+                          weight++;
+                        });
+                      },
+                    ),
                   ),
-                  SizedBox(width: 25),
+                  const SizedBox(width: 25),
                   StatusCard(
-                    child: WeightAge(text: AppTexts.age, san: "28"),
+                    child: WeightAge(
+                      text: AppTexts.age,
+                      san: " $age",
+                      removebasuu: () {
+                        setState(() {
+                          age--;
+                        });
+                      },
+                      addbasuu: () {
+                        setState(() {
+                          age++;
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
