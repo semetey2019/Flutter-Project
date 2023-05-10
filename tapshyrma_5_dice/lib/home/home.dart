@@ -28,10 +28,11 @@ class _DiceGameState extends State<DiceApp> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Center(
-            child: Text(
-          'Tapshyrma 5',
-          style: TextStyle(color: Colors.black),
-        )),
+          child: Text(
+            'Tapshyrma 5',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
         elevation: 0,
       ),
       body: Center(
@@ -72,32 +73,36 @@ class _DiceGameState extends State<DiceApp> {
               children: [
                 // InkWell-
                 Expanded(
-                    child: InkWell(
-                        onTap: () {
-                          change();
-                        },
-                        //$firstDice-алмаштырат
-                        child: Image.asset(
-                          'images/dice$firstDice-png.png',
-                          width: 220,
-                          height: 220,
-                        ))),
+                  child: InkWell(
+                    onTap: () {
+                      change();
+                    },
+                    //$firstDice-алмаштырат
+                    child: Image.asset(
+                      'images/dice$firstDice-png.png',
+                      width: 220,
+                      height: 220,
+                    ),
+                  ),
+                ),
                 const SizedBox(
                   width: 25,
                 ),
                 Expanded(
-                    child: InkWell(
-                        // ontap-мн кнопкабыз басканга болот(кубик)
-                        onTap: () {
-                          change();
-                        },
-                        child: Image.asset(
-                          'images/dice$secondDice-png.png',
-                          height: 220,
-                          width: 220,
-                        ))),
+                  child: InkWell(
+                    // ontap-мн кнопкабыз басканга болот(кубик)
+                    onTap: () {
+                      change();
+                    },
+                    child: Image.asset(
+                      'images/dice$secondDice-png.png',
+                      height: 220,
+                      width: 220,
+                    ),
+                  ),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
