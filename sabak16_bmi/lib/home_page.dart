@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:sabak16_bmi/constants/Height.dart';
 import 'package:sabak16_bmi/constants/app_colors.dart';
@@ -6,6 +8,7 @@ import 'package:sabak16_bmi/constants/calculateButton.dart';
 import 'package:sabak16_bmi/constants/male_female.dart';
 import 'package:sabak16_bmi/constants/weight_age.dart';
 
+import 'constants/result_page.dart';
 import 'constants/status_card.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -18,49 +21,24 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool isTrue = true;
   int weight = 60;
-  int age = 35;
+  int age = 23;
   double height = 180;
-  // int currentindex = 0;
-  // @override
-  // int slader = 1;
-
-  // void change() {
-  //   setState(() {
-  //     slader = currentindex++;
-  //   });
-  //   if (slader.toInt() == true) {
-  //     showDialog<void>(
-  //       context: context,
-  //       barrierDismissible: false,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //           title: const Text('Jyiyntyk'),
-  //           content: SingleChildScrollView(
-  //             child: ListBody(
-  //               children: const <Widget>[
-  //                 Text('norma'),
-  //               ],
-  //             ),
-  //           ),
-  //           actions: <Widget>[
-  //             TextButton(
-  //               child: const Text('Жок'),
-  //               onPressed: () {
-  //                 Navigator.of(context).pop();
-  //               },
-  //             ),
-  //             TextButton(
-  //               child: const Text('Ооба'),
-  //               onPressed: () {
-  //                 Navigator.of(context).pop();
-  //               },
-  //             ),
-  //           ],
-  //         );
-  //       },
-  //     );
-  //   }
-  // }
+  void resultattar() {
+    final res = weight / pow(height / 100, 2);
+    if (res <= 18.5) {
+      _showAlertDialog(context, "Сиз арыксыз");
+      // print('Сиз арыксыз:$res');
+    } else if (res >= 18.6 && res <= 25) {
+      _showAlertDialog(context, "Нормалдуу");
+      // print('Нормалдуу:$res');
+    } else if (res >= 25.1 && res <= 30) {
+      _showAlertDialog(context, "Сиз ашыкча салмактуусуз");
+      // print('Сиз ашыкча салмактуусуз:$res');
+    } else {
+      _showAlertDialog(context, "Сиз семизсиз");
+      // print('Сиз семизсиз:$res');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,7 +150,47 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: const CalculateButton(),
+      bottomNavigationBar: CalculateButton(
+        onPressed: () {
+          // resultattar();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultPage(
+                metri: height,
+                salmak: weight,
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
+}
+
+Future<void> _showAlertDialog(BuildContext context, text) async {
+  return showDialog<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: AppColors.bgrColor,
+        title: const Text(
+          AppTexts.bmi,
+          textAlign: TextAlign.center,
+        ),
+        content: Text(
+          text,
+          textAlign: TextAlign.center,
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('Чыгуу'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }
