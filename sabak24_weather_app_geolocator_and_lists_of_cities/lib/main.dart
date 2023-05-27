@@ -57,7 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
       Position position = await Geolocator.getCurrentPosition();
       Dio dio = Dio();
 
-      final response = await dio.get(ApiConst.adress());
+      final response = await dio.get(
+        ApiConst.adress(lat: position.latitude, lon: position.longitude),
+      );
       if (response.statusCode == 200) {
         weather = Weather(
           id: response.data['current']['weather'][0]['id'],
@@ -69,6 +71,21 @@ class _MyHomePageState extends State<MyHomePage> {
         );
       }
       setState(() {});
+    } else {
+      Position position = await Geolocator.getCurrentPosition();
+      Dio dio = Dio();
+      final response = await dio.get(
+          ApiConst.adress(lat: position.latitude, lon: position.longitude));
+      if (response.statusCode == 200) {
+        weather = Weather(
+          id: response.data['current']['weather'][0]['id'],
+          main: response.data['current']['weather'][0]['main'],
+          description: response.data['current']['weather'][0]['description'],
+          icon: response.data['current']['weather'][0]['icon'],
+          temp: response.data['current']['main']['temp'],
+          name: response.data['timezone'],
+        );
+      }
     }
   }
 
