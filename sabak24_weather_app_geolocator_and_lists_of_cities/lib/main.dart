@@ -56,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
         permission == LocationPermission.whileInUse) {
       Position position = await Geolocator.getCurrentPosition();
       Dio dio = Dio();
-
+      //серверден дата алып келуучу плагин
+//await Future.delayed, const Duration(seconds:7) - кутуу учун убакыт озубуз бердик
       final response = await dio.get(
         ApiConst.adress(lat: position.latitude, lon: position.longitude),
       );
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           main: response.data['current']['weather'][0]['main'],
           description: response.data['current']['weather'][0]['description'],
           icon: response.data['current']['weather'][0]['icon'],
-          temp: response.data['current']['main']['temp'],
+          temp: response.data['current']['temp'],
           name: response.data['timezone'],
         );
       }
@@ -75,24 +76,25 @@ class _MyHomePageState extends State<MyHomePage> {
       Position position = await Geolocator.getCurrentPosition();
       Dio dio = Dio();
       final response = await dio.get(
-          ApiConst.adress(lat: position.latitude, lon: position.longitude));
+        ApiConst.adress(lat: position.latitude, lon: position.longitude),
+      );
       if (response.statusCode == 200) {
         weather = Weather(
           id: response.data['current']['weather'][0]['id'],
           main: response.data['current']['weather'][0]['main'],
           description: response.data['current']['weather'][0]['description'],
           icon: response.data['current']['weather'][0]['icon'],
-          temp: response.data['current']['main']['temp'],
+          temp: response.data['current']['temp'],
           name: response.data['timezone'],
         );
       }
+      setState(() {});
     }
   }
 
   ///////////////////////////////////
   Future<void> fetchData([String? url]) async {
     Dio dio = Dio();
-
     final response = await dio.get(
       ApiConst.weatherData(url ?? 'Bishkek'),
     );
@@ -154,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           IconButton(
-                            onPressed: () {
+                            onPressed: () async {
                               shouBottom();
                             },
                             icon: const Icon(
@@ -178,8 +180,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Image.network(
                           ApiConst.getIcon(weather!.icon, 4),
-                          width: 150,
-                          height: 150,
                         ),
                       ],
                     ),
