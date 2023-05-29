@@ -208,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             weather!.name,
                             style: const TextStyle(
                               color: Colors.white,
-                              fontSize: 70,
+                              fontSize: 80,
                             ),
                           ),
                         ),
