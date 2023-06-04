@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
-                      'image/photo.jpg',
+                      'image/weather.jpg',
                     ),
                   ),
                 ),
@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         const Padding(padding: EdgeInsets.only(left: 10)),
                         Text(
-                          '${(weather!.temp - 273.15).toInt()}',
+                          '${(weather!.temp - 273.15).toInt()}°',
                           style: AppTextStyle.sanTextStyle,
                         ),
                         Image.network(
@@ -192,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Text(
                           weather!.description.replaceAll(' ', '\n'),
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.green,
                             fontSize: 70,
                           ),
                         ),
@@ -207,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Text(
                             weather!.name,
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.greenAccent,
                               fontSize: 80,
                             ),
                           ),
