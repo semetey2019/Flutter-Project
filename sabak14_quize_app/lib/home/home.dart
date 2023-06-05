@@ -16,54 +16,61 @@ class _HomePageState extends State<HomePage> {
 
   void tecsher(bool koldonuu) {
     bool correctAnswer = useQuize.joopAluu();
-    setState(() {
-      if (useQuize.isfinished() == true) {
-        showDialog<void>(
-          context: context,
-          barrierDismissible: false,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Тест QuizeApp'),
-              content: SingleChildScrollView(
-                child: ListBody(
-                  children: const <Widget>[
-                    Text('Тест аягына чыкты, кайра биринчи суроого баруу'),
-                  ],
+    setState(
+      () {
+        if (useQuize.isfinished() == true) {
+          showDialog<void>(
+            context: context,
+            barrierDismissible: false,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Тест QuizeApp'),
+                content: SingleChildScrollView(
+                  child: ListBody(
+                    children: const <Widget>[
+                      Text('Тест аягына чыкты, кайра биринчи суроого баруу'),
+                    ],
+                  ),
                 ),
-              ),
-              actions: <Widget>[
-                TextButton(
-                  child: const Text('Жок'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-                TextButton(
-                  child: const Text('Ооба'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-              ],
-            );
-          },
-        );
-        useQuize.indexZero();
-      } else {
-        if (correctAnswer == koldonuu) {
-          iconAluu.add(const Icon(
-            Icons.check,
-            color: Colors.green,
-          ));
+                actions: <Widget>[
+                  TextButton(
+                    child: const Text('Жок'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  TextButton(
+                    child: const Text('Ооба'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+          useQuize.indexZero();
+          iconAluu = [];
         } else {
-          iconAluu.add(const Icon(
-            Icons.close,
-            color: Colors.red,
-          ));
+          if (correctAnswer == koldonuu) {
+            iconAluu.add(
+              const Icon(
+                Icons.check,
+                color: Colors.green,
+              ),
+            );
+          } else {
+            iconAluu.add(
+              const Icon(
+                Icons.close,
+                color: Colors.red,
+              ),
+            );
+          }
+          useQuize.nextQuestion();
         }
-        useQuize.nextQuestion();
-      }
-    });
+      },
+    );
   }
 
   @override
@@ -122,12 +129,13 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 40,
                 child: ListView.builder(
-                    itemCount: iconAluu.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return iconAluu[index];
-                    }),
-              )
+                  itemCount: iconAluu.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return iconAluu[index];
+                  },
+                ),
+              ),
             ],
           ),
         ),

@@ -7,8 +7,8 @@ import 'package:sabak26_news_app/model/top_news.dart';
 class TopNewsRepo {
   final http.Client client = http.Client();
   Future<TopNews?> fetchTopNews() async {
-    final Uri uri = Uri.parse(ApiConst.topNews);
-    final http.Response response = await client.get(uri);
+    final Uri url = Uri.parse(ApiConst.topNews);
+    final http.Response response = await client.get(url);
     if (response.statusCode == 200 || response.statusCode == 201) {
       print(response.body);
       print('----------------------');

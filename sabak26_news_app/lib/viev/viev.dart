@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sabak26_news_app/constants/api_const.dart';
+
 import 'package:sabak26_news_app/model/top_news.dart';
 import 'package:sabak26_news_app/services/fetch_service.dart';
 

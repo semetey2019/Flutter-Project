@@ -33,14 +33,15 @@ class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold( backgroundColor: Colors.white, 
-    //list's color
+    return Scaffold(
+      backgroundColor: Colors.white,
+      //list's color
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Center(
           child: Text(
             "Тапшырма 1",
-            style: TextStyle(color: Colors.black), 
+            style: TextStyle(color: Colors.black),
             //text's color
           ),
         ),
@@ -57,10 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: double.infinity,
                 height: 30,
                 child: Center(
-                    child: Text(
-                  "Сан: $index",
-                  style: const TextStyle(fontSize: 20),
-                ),
+                  child: Text(
+                    "Сан: $index",
+                    style: const TextStyle(fontSize: 20),
+                  ),
                 ),
                 decoration: BoxDecoration(
                     //өң,капталдарын кыркуу
@@ -85,22 +86,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(
                     width: 10,
                   ),
-                        //элветонбаттон биз койгон +-тардын фигурасын курат
+                  //элветонбаттон биз койгон +-тардын фигурасын курат
                   ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          index++; //+1
-                        });
-                      },
-                      child: const Icon(Icons.add,)),       
+                    onPressed: () {
+                      setState(() {
+                        index++; //+1
+                      });
+                    },
+                    child: const Icon(
+                      Icons.add,
+                    ),
+                  ),
                 ],
               ),
-  
-              const SizedBox(height: 25,),
-              IconButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => EkinchiBet(count:index)));
-              }, icon: const Icon(Icons.next_plan, size: 50,
-              color: Colors.pink,)),
+              const SizedBox(
+                height: 25,
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EkinchiBet(count: index),
+                    ),
+                  );
+                },
+                icon: const Icon(
+                  Icons.next_plan,
+                  size: 50,
+                  color: Colors.pink,
+                ),
+              ),
             ],
           ),
         ),

@@ -1,5 +1,5 @@
+import 'package:Login_page/home/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:login_page/home/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,12 +10,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-       
         primarySwatch: Colors.green,
-        
       ),
       home: const LoginPage(),
-      
     );
   }
 }

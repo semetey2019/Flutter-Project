@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import '';
 
 void main() {
   runApp(const MyApp());
@@ -33,13 +32,14 @@ class _MyHomePageState extends State<MyHomePage> {
   fetchData() async {
     Dio dio = Dio();
     await Future.delayed(
-      Duration(seconds: 7),
+      const Duration(seconds: 7),
     );
     res = await dio.get(
         'https://api.openweathermap.org/data/2.5/weather?q=bishkek,&appid=41aa18abb8974c0ea27098038f6feb1b');
     setState(() {});
   }
 
+  @override
   void initState() {
     super.initState();
     fetchData();
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('MyHomePage'),
       ),
       body: Center(
-        child: res == null ? CircularProgressIndicator() : Text('$res'),
+        child: res == null ? const CircularProgressIndicator() : Text('$res'),
       ),
     );
   }
