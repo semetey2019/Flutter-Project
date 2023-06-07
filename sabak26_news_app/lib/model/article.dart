@@ -5,11 +5,11 @@ class Article {
     required this.source,
     this.autor,
     required this.title,
-    this.description,
+    required this.description,
     required this.url,
-    this.urlToImage,
+    required this.urlToImage,
     required this.publishedAt,
-    this.content,
+    required this.content,
   });
   final Source source;
   final String? autor;

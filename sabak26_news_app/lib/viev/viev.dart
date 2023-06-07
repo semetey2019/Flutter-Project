@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sabak26_news_app/constants/api_const.dart';
-
 import 'package:sabak26_news_app/model/top_news.dart';
 import 'package:sabak26_news_app/services/fetch_service.dart';
+import 'package:sabak26_news_app/viev/detail_viev.dart';
 
 class HomeViev extends StatefulWidget {
   const HomeViev({super.key});
@@ -35,7 +35,9 @@ class _HomeVievState extends State<HomeViev> {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        actions: const [Icon(Icons.more_vert, color: Colors.white)],
+        actions: const [
+          Icon(Icons.more_vert, color: Colors.white),
+        ],
       ),
       body: topNews == null
           ? const Center(child: CircularProgressIndicator())
@@ -44,15 +46,32 @@ class _HomeVievState extends State<HomeViev> {
               itemBuilder: (context, index) {
                 final news = topNews!.article[index];
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailViev(
+                          article: news,
+                        ),
+                      ),
+                    );
+                  },
                   child: Card(
                     color: Colors.grey[100],
                     child: Row(
                       children: [
                         Expanded(
                           flex: 3,
-                          child: Image.network(
-                              news.urlToImage ?? ApiConst.newsImage),
+                          child:
+                              //  CachedNetworkImage(
+                              //   imageUrl: news.urlToImage,
+                              //   placeholder: (context, url) =>
+                              //       const CircularProgressIndicator(),
+                              //   errorWidget: (context, url, error) =>
+                              //       Image.asset('assets/error.png'),
+                              // ),
+                              Image.network(
+                                  news.urlToImage ?? ApiConst.newsImage),
                         ),
                         Expanded(
                           flex: 5,

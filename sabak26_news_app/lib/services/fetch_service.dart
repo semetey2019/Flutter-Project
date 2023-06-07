@@ -13,8 +13,10 @@ class TopNewsRepo {
       print(response.body);
       print('----------------------');
       print(response.body.runtimeType);
+      //тибин билет
       print('----------------------');
       final data = jsonDecode(response.body);
+      //jsonDecode- map методко айлантат
       print(data.runtimeType);
       print('----------------------');
       final topNews = TopNews.fromJson(data);
