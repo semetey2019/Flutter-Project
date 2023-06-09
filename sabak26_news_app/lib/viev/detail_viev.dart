@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sabak26_news_app/components/detail_title.dart';
 import 'package:sabak26_news_app/model/article.dart';
+import 'package:sabak26_news_app/theme/app_colors.dart';
 import 'package:share_plus/share_plus.dart';
-
 import '../components/detail_descrioption.dart';
 import '../components/detail_divider.dart';
 import '../components/detail_news_time.dart';
@@ -20,7 +20,7 @@ class DetailViev extends StatelessWidget {
     );
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: AppColors.detailAppBarColors,
         centerTitle: true,
         title: Text(article.title),
         actions: article.url.isNotEmpty
@@ -35,25 +35,23 @@ class DetailViev extends StatelessWidget {
             : null,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              DetailTitle(article: article),
-              const SizedBox(height: 10),
-              const DetailDivider(),
-              DetilNewsTime(newsTime: newsTime),
-              const SizedBox(height: 15),
-              Image.network(
-                article.urlToImage.toString(),
-              ),
-              const SizedBox(height: 15),
-              DetailDescription(article: article),
-              DetailSiteButton(
-                article: article,
-              ),
-            ],
-          ),
+        padding: EdgeInsets.all(6),
+        child: ListView(
+          children: [
+            DetailTitle(article: article),
+            const SizedBox(height: 10),
+            const DetailDivider(),
+            DetilNewsTime(newsTime: newsTime),
+            const SizedBox(height: 15),
+            Image.network(
+              article.urlToImage.toString(),
+            ),
+            const SizedBox(height: 15),
+            DetailDescription(article: article),
+            DetailSiteButton(
+              article: article,
+            ),
+          ],
         ),
       ),
     );

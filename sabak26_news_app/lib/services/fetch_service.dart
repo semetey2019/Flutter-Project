@@ -6,21 +6,21 @@ import 'package:sabak26_news_app/model/top_news.dart';
 
 class TopNewsRepo {
   final http.Client client = http.Client();
-  Future<TopNews?> fetchTopNews() async {
-    final Uri url = Uri.parse(ApiConst.topNews);
+  Future<TopNews?> fetchTopNews([String? domain]) async {
+    final Uri url = Uri.parse(ApiConst.topNews(domain));
     final http.Response response = await client.get(url);
     if (response.statusCode == 200 || response.statusCode == 201) {
-      print(response.body);
-      print('----------------------');
-      print(response.body.runtimeType);
+      //print(response.body);
+      //print('----------------------');
+      //print(response.body.runtimeType);
       //тибин билет
-      print('----------------------');
+      //print('----------------------');
       final data = jsonDecode(response.body);
       //jsonDecode- map методко айлантат
-      print(data.runtimeType);
-      print('----------------------');
+      //print(data.runtimeType);
+      //print('----------------------');
       final topNews = TopNews.fromJson(data);
-      print(topNews);
+      // print(topNews);
       return topNews;
     }
     return null;

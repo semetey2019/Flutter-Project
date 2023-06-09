@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sabak26_news_app/viev/viev.dart';
+import 'package:sabak26_news_app/viev/home_viev.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

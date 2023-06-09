@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DetilNewsTime extends StatelessWidget {
-  const DetilNewsTime({
-    super.key,
-    required this.newsTime,
-  });
+  const DetilNewsTime({super.key, required this.newsTime});
 
   final String newsTime;
 

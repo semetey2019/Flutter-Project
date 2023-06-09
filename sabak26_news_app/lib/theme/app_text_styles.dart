@@ -12,4 +12,6 @@ class AppTextStyles {
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
+
+  static const TextStyle agrStyle = TextStyle(color: Colors.white);
 }

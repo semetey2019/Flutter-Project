@@ -3,10 +3,7 @@ import 'package:sabak26_news_app/model/article.dart';
 import 'package:sabak26_news_app/theme/app_text_styles.dart';
 
 class DetailTitle extends StatelessWidget {
-  const DetailTitle({
-    super.key,
-    required this.article,
-  });
+  const DetailTitle({super.key, required this.article});
 
   final Article article;
 
