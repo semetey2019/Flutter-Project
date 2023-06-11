@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sabak26_news_app/components/detail_title.dart';
+import 'package:sabak26_news_app/constants/api_const.dart';
 import 'package:sabak26_news_app/model/article.dart';
 import 'package:sabak26_news_app/theme/app_colors.dart';
 import 'package:share_plus/share_plus.dart';
@@ -35,7 +37,7 @@ class DetailViev extends StatelessWidget {
             : null,
       ),
       body: Padding(
-        padding: EdgeInsets.all(6),
+        padding: const EdgeInsets.all(6),
         child: ListView(
           children: [
             DetailTitle(article: article),
@@ -43,8 +45,11 @@ class DetailViev extends StatelessWidget {
             const DetailDivider(),
             DetilNewsTime(newsTime: newsTime),
             const SizedBox(height: 15),
-            Image.network(
-              article.urlToImage.toString(),
+            CachedNetworkImage(
+              imageUrl: article.urlToImage ?? ApiConst.newsImage,
+              placeholder: (context, url) => Image.asset('assets/error.png'),
+              errorWidget: (context, url, error) =>
+                  Image.asset('assets/news.jpg'),
             ),
             const SizedBox(height: 15),
             DetailDescription(article: article),

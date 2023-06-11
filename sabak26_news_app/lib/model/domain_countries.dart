@@ -10,8 +10,13 @@ const Country france = Country(name: 'France', domain: 'fr');
 const Country korea = Country(name: 'Korea', domain: 'kr');
 const Country argentina = Country(name: 'Argentina', domain: 'ar');
 const Country poland = Country(name: 'Poland', domain: 'pl');
-const Country rossia = Country(name: 'Rossia', domain: 'ru');
+const Country russia = Country(name: 'Russia', domain: 'ru');
 const Country italia = Country(name: 'Itali', domain: 'it');
+const Country australia = Country(name: 'Australia', domain: 'au');
+const Country austria = Country(name: 'Austria', domain: 'at');
+const Country azerbaijan = Country(name: 'Azerbaijan', domain: 'az');
+const Country india = Country(name: 'India', domain: 'in');
+const Country turkey = Country(name: 'Turkey', domain: 'tr');
 
 Set<Country> countiesSet = {
   oae,
@@ -19,6 +24,7 @@ Set<Country> countiesSet = {
   korea,
   argentina,
   poland,
-  rossia,
+  russia,
   italia
 };
+//Set - бул окшоштукту кабыл албайт, м:1 саны бир эле жолу берилиш керек

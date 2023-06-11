@@ -1,3 +1,3 @@
 class AppText {
-  static const String agr = 'News Aggregator';
+  static const String agr = 'News App';
 }

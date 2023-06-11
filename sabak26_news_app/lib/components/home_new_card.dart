@@ -34,7 +34,7 @@ class CardNews extends StatelessWidget {
                 imageUrl: news.urlToImage ?? ApiConst.newsImage,
                 placeholder: (context, url) => Image.asset('assets/error.png'),
                 errorWidget: (context, url, error) =>
-                    Image.asset('assets/error.png'),
+                    Image.asset('assets/news.jpg'),
               ),
             ),
             Sized.width5,

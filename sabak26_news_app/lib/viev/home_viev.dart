@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sabak26_news_app/components/home_new_card.dart';
+
 import 'package:sabak26_news_app/model/domain_countries.dart';
 import 'package:sabak26_news_app/model/top_news.dart';
 import 'package:sabak26_news_app/services/fetch_service.dart';
@@ -17,6 +18,7 @@ class HomeViev extends StatefulWidget {
 class _HomeVievState extends State<HomeViev> {
   TopNews? topNews;
   Future<void> fetchNews([String? domain]) async {
+    //'[]'- coзсуз алсын деген эмес. болсо ала берет
     topNews = null;
     setState(() {});
     topNews = await TopNewsRepo().fetchTopNews(domain);
@@ -41,6 +43,7 @@ class _HomeVievState extends State<HomeViev> {
         ),
         actions: [
           PopupMenuButton<Country>(onSelected: (Country item) async {
+            //popupmenubutton - ...ны баскан жер.onselected - кичинекей экран
             await fetchNews(item.domain);
           }, itemBuilder: (BuildContext context) {
             return countiesSet

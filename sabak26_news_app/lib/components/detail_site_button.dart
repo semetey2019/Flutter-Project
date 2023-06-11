@@ -16,7 +16,7 @@ class DetailSiteButton extends StatelessWidget {
           throw Exception('Could not launch $url');
         }
       },
-      child: const Text('Cайтын коруу'),
+      child: const Text('Open Page'),
     );
   }
 }

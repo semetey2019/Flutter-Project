@@ -4,5 +4,5 @@ class ApiConst {
       'https://newsapi.org/v2/top-headlines?country=${domain ?? 'us'}&apiKey=$apiKey';
 
   static const newsImage =
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv_yRJbCYXUchlrCCQcSboWTKD5DsJbXhKfA&usqp=CAU';
+      'https://cdn.xxl.thumbs.canstockphoto.com/news-world-news-conceptual-3d-rendered-image-drawing_csp0541854.jpg';
 }
