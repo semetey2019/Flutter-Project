@@ -17,6 +17,7 @@ const Country austria = Country(name: 'Austria', domain: 'at');
 const Country azerbaijan = Country(name: 'Azerbaijan', domain: 'az');
 const Country india = Country(name: 'India', domain: 'in');
 const Country turkey = Country(name: 'Turkey', domain: 'tr');
+const Country usa = Country(name: 'USA', domain: 'us');
 
 Set<Country> countiesSet = {
   oae,
@@ -25,6 +26,12 @@ Set<Country> countiesSet = {
   argentina,
   poland,
   russia,
-  italia
+  italia,
+  usa,
+  turkey,
+  india,
+  azerbaijan,
+  austria,
+  australia
 };
 //Set - бул окшоштукту кабыл албайт, м:1 саны бир эле жолу берилиш керек

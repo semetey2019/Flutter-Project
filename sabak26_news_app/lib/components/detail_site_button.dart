@@ -8,7 +8,7 @@ class DetailSiteButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Uri url = Uri.parse(article.url);
+    final Uri url = Uri.parse(article.url!);
     return MaterialButton(
       color: Colors.deepPurpleAccent,
       onPressed: () async {

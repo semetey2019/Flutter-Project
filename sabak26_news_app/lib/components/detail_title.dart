@@ -10,7 +10,7 @@ class DetailTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      article.title,
+      article.title!,
       textAlign: TextAlign.center,
       style: AppTextStyles.titleTextStyle,
     );

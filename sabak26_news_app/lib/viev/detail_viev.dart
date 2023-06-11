@@ -18,18 +18,18 @@ class DetailViev extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final newsTime = DateFormat('d MMMM y H:m:s').format(
-      DateTime.parse(article.publishedAt),
+      DateTime.parse(article.publishedAt!),
     );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.detailAppBarColors,
         centerTitle: true,
-        title: Text(article.title),
-        actions: article.url.isNotEmpty
+        title: Text(article.title!),
+        actions: article.url!.isNotEmpty
             ? [
                 IconButton(
                   onPressed: () {
-                    Share.share(article.url);
+                    Share.share(article.url!);
                   },
                   icon: const Icon(Icons.share),
                 ),

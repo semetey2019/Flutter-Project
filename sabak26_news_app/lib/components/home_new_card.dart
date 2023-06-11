@@ -32,7 +32,8 @@ class CardNews extends StatelessWidget {
               flex: 3,
               child: CachedNetworkImage(
                 imageUrl: news.urlToImage ?? ApiConst.newsImage,
-                placeholder: (context, url) => Image.asset('assets/error.png'),
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
                 errorWidget: (context, url, error) =>
                     Image.asset('assets/news.jpg'),
               ),
@@ -40,7 +41,7 @@ class CardNews extends StatelessWidget {
             Sized.width5,
             Expanded(
               flex: 5,
-              child: Text(news.title),
+              child: Text(news.title!),
             ),
           ],
         ),

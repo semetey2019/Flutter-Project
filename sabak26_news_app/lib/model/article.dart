@@ -2,22 +2,23 @@ import 'package:sabak26_news_app/model/sourse.dart';
 
 class Article {
   Article({
-    required this.source,
+    this.source,
     this.autor,
-    required this.title,
-    required this.description,
-    required this.url,
-    required this.urlToImage,
-    required this.publishedAt,
-    required this.content,
+    this.title,
+    this.description,
+    this.url,
+    this.urlToImage,
+    this.publishedAt,
+    this.content,
   });
-  final Source source;
+
+  final Source? source;
   final String? autor;
-  final String title;
+  final String? title;
   final String? description;
-  final String url;
+  final String? url;
   final String? urlToImage;
-  final String publishedAt;
+  final String? publishedAt;
   final String? content;
 
   factory Article.fromJson(Map<String, dynamic> json) {
