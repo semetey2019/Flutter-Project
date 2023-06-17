@@ -1,3 +1,4 @@
+import 'package:alma_project/widgets/HomeBottomBar.dart';
 import 'package:alma_project/widgets/HomePagePosts.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
               children: [
                 for (int i = 1; i < 4; i++)
                   Image.asset(
-                    'deal1.jpg',
+                    'assets/deal1.jpg',
                     height: 250,
                     fit: BoxFit.cover,
                   ),
@@ -59,17 +60,23 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Image.asset(
-                      '$i.png',
-                      fit: BoxFit.cover,
-                    ),
+                    child: Row(children: [
+                      Expanded(
+                        flex: 6,
+                        child: Image.asset(
+                          'assets/$i.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ]),
                   ),
               ],
             ),
           ),
-          HomePagePosts()
+          const HomePagePosts()
         ],
       ),
+      bottomNavigationBar: const HomeBottomBar(),
     );
   }
 }

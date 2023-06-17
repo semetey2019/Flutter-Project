@@ -1,4 +1,7 @@
+import 'package:alma_project/pages/CartPage.dart';
+import 'package:alma_project/pages/OrderPage.dart';
 import 'package:alma_project/pages/home_page.dart';
+import 'package:alma_project/widgets/itemPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,6 +31,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => const HomePage(),
+        "itemPage": (context) => const ItemPage(),
+        "cartPage": (context) => const CartPage(),
+        "orderPage": (context) => const OrderPage(),
       },
     );
   }
