@@ -52,10 +52,10 @@ class _HomeVievState extends State<HomeViev> {
               padding: const EdgeInsets.only(left: 10, top: 25, right: 10),
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200,
-                    crossAxisSpacing: 170,
-                    mainAxisExtent: 170),
-                itemCount: continents.length,
+                    maxCrossAxisExtent: 180,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 10),
+                itemCount: 6,
                 itemBuilder: (BuildContext ctx, index) {
                   return InkWell(
                     onTap: () {

@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:sabak10_end_forloop/model.dart';
-
 class Student {
   Student(
       {required this.id,

@@ -87,9 +87,9 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         FlutterLogo(
                           size: 100,
                           style: FlutterLogoStyle.horizontal,
@@ -120,8 +120,8 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextField(
                         onChanged: (String value) {
                           _name = value;
-                          print("Валуе иштеди $value");
-                          print(" Валлуе иштеди $_name");
+                          // print("Валуе иштеди $value");
+                          // print(" Валлуе иштеди $_name");
                         },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
@@ -138,8 +138,8 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextField(
                         onChanged: (String value) {
                           _gmail = value;
-                          print("Валуе иштеди $value");
-                          print(" Валлуе иштеди $_gmail");
+                          // print("Валуе иштеди $value");
+                          // print(" Валлуе иштеди $_gmail");
                         },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),

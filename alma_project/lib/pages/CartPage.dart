@@ -90,8 +90,8 @@ class _CartPageState extends State<CartPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            padding: EdgeInsets.all(15),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -111,16 +111,18 @@ class _CartPageState extends State<CartPage> {
                     Text(
                       'Sub-Total:',
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(162, 0, 0, 0)),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(162, 0, 0, 0),
+                      ),
                     ),
                     Text(
                       '\$100',
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(162, 0, 0, 0)),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(162, 0, 0, 0),
+                      ),
                     ),
                   ],
                 ),

@@ -65,19 +65,44 @@ class _TestVievState extends State<TestViev> {
         children: [
           Slider(
             activeColor: Colors.black,
-            value: 180,
+            value: 200,
             onChanged: (v) {},
             min: 0,
             max: 200,
           ),
           Text(
             widget.suroo[indexText].text,
-            style: AppTextStyle.capitalsstyle,
+            style: AppTextStyle.capitalsStyle,
           ),
-          Image.asset(
-            'assets/capitals/${widget.suroo[indexText].image}.jpg',
-            width: 100,
-            height: 100,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Image.asset(
+              'assets/capitals/${widget.suroo[indexText].image}.jpg',
+            ),
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.only(left: 5, right: 5),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1.6,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+              ),
+              itemCount: 4,
+              itemBuilder: (context, index) {
+                return Card(
+                  color: Colors.grey[400],
+                  child: InkWell(
+                    onTap: () {},
+                    child: Center(
+                      child: Text(widget.suroo[indexText].jooptor.toString()),
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),

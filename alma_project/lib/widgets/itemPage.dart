@@ -199,7 +199,7 @@ class ItemPage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: ItemBottomBar(),
+      bottomNavigationBar: const ItemBottomBar(),
     );
   }
 }

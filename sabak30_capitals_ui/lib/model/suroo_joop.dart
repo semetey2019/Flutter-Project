@@ -42,12 +42,12 @@ Suroo s3 = Suroo(
   ],
 );
 Suroo s4 = Suroo(
-  text: 'Copengagen',
+  text: 'Copenhagen',
   image: 'CopengagenDenmark',
   jooptor: [
     joop(text: 'Denmark', tuuraJoop: true),
-    joop(text: 'Ukrain', tuuraJoop: false),
-    joop(text: 'Norwei', tuuraJoop: false),
+    joop(text: 'Ukraine', tuuraJoop: false),
+    joop(text: 'Norway', tuuraJoop: false),
     joop(text: 'Belgium', tuuraJoop: false),
   ],
 );
