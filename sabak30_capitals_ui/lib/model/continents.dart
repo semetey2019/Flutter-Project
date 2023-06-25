@@ -14,9 +14,9 @@ const Continents asia =
 const Continents africa =
     Continents(name: 'Africa', image: 'africa', color: AppColors.africaColor);
 const Continents northAmerica = Continents(
-    name: 'North America', image: 'north america', color: AppColors.northColor);
+    name: 'North America', image: 'north_america', color: AppColors.northColor);
 const Continents southAmerica = Continents(
-    name: 'South America', image: 'south america', color: AppColors.southColor);
+    name: 'South America', image: 'south_america', color: AppColors.southColor);
 const Continents australia = Continents(
     name: 'Australia', image: 'australia', color: AppColors.ausralColor);
 const Continents europe =
@@ -24,9 +24,9 @@ const Continents europe =
 
 List<Continents> continentsList = [
   asia,
-  africa,
   northAmerica,
   southAmerica,
   australia,
-  europe
+  europe,
+  africa
 ];

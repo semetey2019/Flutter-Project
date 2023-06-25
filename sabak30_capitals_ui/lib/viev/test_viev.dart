@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:sabak30_capitals_ui/constants/app_text_style.dart';
 import 'package:sabak30_capitals_ui/model/suroo_joop.dart';
 
@@ -13,6 +12,8 @@ class TestViev extends StatefulWidget {
 
 class _TestVievState extends State<TestViev> {
   int indexText = 0;
+  int tuuraJoop = 0;
+  int kataJoop = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,18 +32,15 @@ class _TestVievState extends State<TestViev> {
                   offset: const Offset(0, 3),
                 ),
               ]),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                '0',
-                style: AppTextStyle.num1Style,
-              ),
-              Text(
+              Text('$kataJoop', style: AppTextStyle.num1Style),
+              const Text(
                 '32',
                 style: AppTextStyle.num2Style,
               ),
-              Text('0', style: AppTextStyle.num3Style),
+              Text('$tuuraJoop', style: AppTextStyle.num3Style),
             ],
           ),
         ),
@@ -53,9 +51,7 @@ class _TestVievState extends State<TestViev> {
           '3',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
         ),
-        const SizedBox(
-          width: 45,
-        ),
+        const SizedBox(width: 45),
         const Icon(Icons.favorite, color: Colors.red),
         const Icon(Icons.favorite, color: Colors.red),
         const Icon(Icons.favorite, color: Colors.red),
@@ -65,10 +61,10 @@ class _TestVievState extends State<TestViev> {
         children: [
           Slider(
             activeColor: Colors.black,
-            value: 200,
-            onChanged: (v) {},
+            value: indexText.toDouble(),
+            onChanged: (value) {},
             min: 0,
-            max: 200,
+            max: 5,
           ),
           Text(
             widget.suroo[indexText].text,
@@ -93,11 +89,46 @@ class _TestVievState extends State<TestViev> {
               itemCount: 4,
               itemBuilder: (context, index) {
                 return Card(
-                  color: Colors.grey[400],
+                  color: Colors.green[400],
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      if (indexText + 1 == widget.suroo.length) {
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('Сиздин тест жыйынтыгыныз'),
+                            content: Text('Туура: $tuuraJoop\nКата:$kataJoop'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  indexText = 0;
+                                  kataJoop = 0;
+                                  tuuraJoop = 0;
+                                  setState(
+                                    () {
+                                      Navigator.pop(context);
+                                    },
+                                  );
+                                },
+                                child: const Text('Cancel'),
+                              ),
+                            ],
+                          ),
+                        );
+                      } else {
+                        if (widget.suroo[indexText].jooptor[index].isBool ==
+                            true) {
+                          tuuraJoop++;
+                        } else {
+                          kataJoop++;
+                        }
+                      }
+                      setState(() {
+                        indexText++;
+                      });
+                    },
                     child: Center(
-                      child: Text(widget.suroo[indexText].jooptor.toString()),
+                      child: Text(widget.suroo[indexText].jooptor[index].text),
                     ),
                   ),
                 );

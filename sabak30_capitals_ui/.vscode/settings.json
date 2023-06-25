@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/KARANAY/Desktop/Flutter project/sabak30_capitals_ui/linux"
+    "cmake.sourceDirectory": "C:/Users/KARANAY/Desktop/Flutter project/sabak30_capitals_ui/linux",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

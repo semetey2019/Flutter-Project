@@ -10,9 +10,9 @@ class AppColors {
   static const red = Colors.red;
   static const green = Colors.green;
   static const asiaColor = Color.fromARGB(255, 249, 184, 87);
-  static const africaColor = Color.fromARGB(255, 170, 115, 32);
+  static const africaColor = Color.fromARGB(255, 190, 133, 47);
   static const northColor = Color.fromARGB(255, 70, 47, 14);
-  static const southColor = Color.fromARGB(255, 76, 204, 76);
-  static const europecolor = Color.fromARGB(255, 71, 145, 42);
-  static const ausralColor = Color.fromARGB(255, 185, 94, 41);
+  static const southColor = Color.fromARGB(255, 95, 29, 40);
+  static const europecolor = Color.fromARGB(255, 59, 69, 211);
+  static const ausralColor = Color.fromARGB(255, 95, 184, 87);
 }

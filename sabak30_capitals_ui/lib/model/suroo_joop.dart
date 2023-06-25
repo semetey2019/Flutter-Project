@@ -6,59 +6,59 @@ class Suroo {
 }
 
 class joop {
-  joop({required this.text, required this.tuuraJoop});
+  joop({required this.text, required this.isBool});
   final String text;
-  final bool tuuraJoop;
+  final bool isBool;
 }
 
 Suroo s1 = Suroo(
   text: 'Paris',
   image: 'Paris',
   jooptor: [
-    joop(text: 'Germany', tuuraJoop: false),
-    joop(text: 'Finland', tuuraJoop: false),
-    joop(text: 'France', tuuraJoop: true),
-    joop(text: 'Italy', tuuraJoop: false),
+    joop(text: 'Germany', isBool: false),
+    joop(text: 'Finland', isBool: false),
+    joop(text: 'France', isBool: true),
+    joop(text: 'Italy', isBool: false),
   ],
 );
 Suroo s2 = Suroo(
   text: 'Bern',
   image: 'BernSwitzerland',
   jooptor: [
-    joop(text: 'Russia', tuuraJoop: false),
-    joop(text: 'England', tuuraJoop: false),
-    joop(text: 'Switzerland', tuuraJoop: true),
-    joop(text: 'Spain', tuuraJoop: false),
+    joop(text: 'Russia', isBool: false),
+    joop(text: 'England', isBool: false),
+    joop(text: 'Switzerland', isBool: true),
+    joop(text: 'Spain', isBool: false),
   ],
 );
 Suroo s3 = Suroo(
   text: 'Brusel',
-  image: 'BernSwitzerland',
+  image: 'belgium',
   jooptor: [
-    joop(text: 'Russia', tuuraJoop: false),
-    joop(text: 'Portugal', tuuraJoop: false),
-    joop(text: 'Albania', tuuraJoop: false),
-    joop(text: 'Belgium', tuuraJoop: true),
+    joop(text: 'Russia', isBool: false),
+    joop(text: 'Portugal', isBool: false),
+    joop(text: 'Albania', isBool: false),
+    joop(text: 'Belgium', isBool: true),
   ],
 );
 Suroo s4 = Suroo(
   text: 'Copenhagen',
-  image: 'CopengagenDenmark',
+  image: 'denmark',
   jooptor: [
-    joop(text: 'Denmark', tuuraJoop: true),
-    joop(text: 'Ukraine', tuuraJoop: false),
-    joop(text: 'Norway', tuuraJoop: false),
-    joop(text: 'Belgium', tuuraJoop: false),
+    joop(text: 'Denmark', isBool: true),
+    joop(text: 'Ukraine', isBool: false),
+    joop(text: 'Norway', isBool: false),
+    joop(text: 'Belgium', isBool: false),
   ],
 );
 Suroo s5 = Suroo(
   text: 'Berlin',
   image: 'Berlin',
   jooptor: [
-    joop(text: 'Greece', tuuraJoop: true),
-    joop(text: 'Sweden', tuuraJoop: false),
-    joop(text: 'Turkey', tuuraJoop: false),
-    joop(text: 'Germany', tuuraJoop: true),
+    joop(text: 'Greece', isBool: true),
+    joop(text: 'Sweden', isBool: false),
+    joop(text: 'Turkey', isBool: false),
+    joop(text: 'Germany', isBool: true),
   ],
 );
 List<Suroo> surooJoopList = [s1, s2, s3, s4, s5];

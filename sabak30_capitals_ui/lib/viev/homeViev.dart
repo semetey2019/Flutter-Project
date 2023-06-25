@@ -22,7 +22,7 @@ class _HomeVievState extends State<HomeViev> {
         centerTitle: true,
         title: Text(
           'Мамлекеттер борбору',
-          style: TextStyle(color: continents[1].color),
+          style: TextStyle(color: continents[3].color),
         ),
         actions: [
           IconButton(
@@ -55,7 +55,7 @@ class _HomeVievState extends State<HomeViev> {
                     maxCrossAxisExtent: 180,
                     crossAxisSpacing: 15,
                     mainAxisSpacing: 10),
-                itemCount: 6,
+                itemCount: continents.length,
                 itemBuilder: (BuildContext ctx, index) {
                   return InkWell(
                     onTap: () {
@@ -82,11 +82,14 @@ class _HomeVievState extends State<HomeViev> {
                               color: continents[index].color,
                             ),
                           ),
-                          SvgPicture.asset(
-                            'assets/continents/${continents[index].image}.svg',
-                            width: 100,
-                            color: continents[index].color,
-                          )
+                          Expanded(
+                            child: SvgPicture.asset(
+                              'assets/continents/${continents[index].image}.svg',
+                              width: 90,
+                              height: 80,
+                              color: continents[index].color,
+                            ),
+                          ),
                         ],
                       ),
                     ),
