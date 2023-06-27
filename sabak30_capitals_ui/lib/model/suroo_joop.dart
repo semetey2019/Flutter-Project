@@ -23,7 +23,7 @@ Suroo s1 = Suroo(
 );
 Suroo s2 = Suroo(
   text: 'Bern',
-  image: 'BernSwitzerland',
+  image: 'Switzerland',
   jooptor: [
     joop(text: 'Russia', isBool: false),
     joop(text: 'England', isBool: false),
@@ -55,7 +55,7 @@ Suroo s5 = Suroo(
   text: 'Berlin',
   image: 'Berlin',
   jooptor: [
-    joop(text: 'Greece', isBool: true),
+    joop(text: 'Greece', isBool: false),
     joop(text: 'Sweden', isBool: false),
     joop(text: 'Turkey', isBool: false),
     joop(text: 'Germany', isBool: true),

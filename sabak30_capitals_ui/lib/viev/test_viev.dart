@@ -18,6 +18,7 @@ class _TestVievState extends State<TestViev> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       appBar: AppBar(centerTitle: true, actions: [
         Container(
           height: 30,
@@ -61,7 +62,7 @@ class _TestVievState extends State<TestViev> {
         children: [
           Slider(
             activeColor: Colors.black,
-            value: indexText.toDouble(),
+            value: indexText.toDouble() + 1,
             onChanged: (value) {},
             min: 0,
             max: 5,
@@ -83,8 +84,8 @@ class _TestVievState extends State<TestViev> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1.6,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
+                // crossAxisSpacing: 15,
+                // mainAxisSpacing: 15,
               ),
               itemCount: 4,
               itemBuilder: (context, index) {
@@ -92,40 +93,43 @@ class _TestVievState extends State<TestViev> {
                   color: Colors.green[400],
                   child: InkWell(
                     onTap: () {
-                      if (indexText + 1 == widget.suroo.length) {
-                        showDialog<String>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                            title: const Text('Сиздин тест жыйынтыгыныз'),
-                            content: Text('Туура: $tuuraJoop\nКата:$kataJoop'),
-                            actions: <Widget>[
-                              TextButton(
-                                onPressed: () {
-                                  indexText = 0;
-                                  kataJoop = 0;
-                                  tuuraJoop = 0;
-                                  setState(
-                                    () {
-                                      Navigator.pop(context);
-                                    },
-                                  );
-                                },
-                                child: const Text('Cancel'),
-                              ),
-                            ],
-                          ),
-                        );
-                      } else {
+                      if (indexText < widget.suroo.length) {
                         if (widget.suroo[indexText].jooptor[index].isBool ==
                             true) {
-                          tuuraJoop++;
+                          ++tuuraJoop;
                         } else {
-                          kataJoop++;
+                          ++kataJoop;
+                        }
+
+                        setState(() {});
+                        indexText++;
+                        if (indexText == widget.suroo.length) {
+                          indexText--;
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              title: const Text('Сиздин тест жыйынтыгыныз'),
+                              content:
+                                  Text('Туура: $tuuraJoop\nКата:$kataJoop'),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    indexText = 0;
+                                    kataJoop = 0;
+                                    tuuraJoop = 0;
+                                    setState(
+                                      () {
+                                        Navigator.pop(context);
+                                      },
+                                    );
+                                  },
+                                  child: const Text('Cancel'),
+                                ),
+                              ],
+                            ),
+                          );
                         }
                       }
-                      setState(() {
-                        indexText++;
-                      });
                     },
                     child: Center(
                       child: Text(widget.suroo[indexText].jooptor[index].text),
