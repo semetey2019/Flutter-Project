@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Center(
                   child: Text(
                     "Сан: $index",
-                    style: const TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
                 decoration: BoxDecoration(
@@ -70,12 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          index--;
-                        });
-                      },
-                      child: const Icon(Icons.remove)),
+                    onPressed: () {
+                      setState(() {
+                        index--;
+                      });
+                    },
+                    child: const Icon(Icons.remove),
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: const Icon(Icons.add))
                 ],
-              )
+              ),
             ],
           ),
         ),
