@@ -1,5 +1,5 @@
 import 'package:sabak14_quize_app/model.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
 class UseQuize {
   int index = 0;
