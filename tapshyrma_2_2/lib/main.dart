@@ -76,13 +76,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          //абалды озгортот
-                          index--; //-1
-                        });
-                      },
-                      child: const Icon(Icons.remove)),
+                    onPressed: () {
+                      setState(() {
+                        //абалды озгортот
+                        index--; //-1
+                      });
+                    },
+                    child: const Icon(Icons.remove),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
