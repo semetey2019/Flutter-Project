@@ -8,7 +8,9 @@ class EkinchiBet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Тапшырма 2")),
+        title: const Center(
+          child: Text("Тапшырма 2"),
+        ),
       ),
       body: Center(
         child: Column(
@@ -26,13 +28,14 @@ class EkinchiBet extends StatelessWidget {
                 width: 300,
                 height: 50,
                 child: Center(
-                    child: Text(
-                  "Сан: $count",
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
-                )),
+                  child: Text(
+                    "Сан: $count",
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

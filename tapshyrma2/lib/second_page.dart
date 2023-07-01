@@ -76,15 +76,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                      onPressed: () {
-                        setState(
-                          () {
-                            //абалды синхронизация
-                            index--; //-1
-                          },
-                        );
-                      },
-                      child: const Icon(Icons.remove)),
+                    onPressed: () {
+                      setState(
+                        () {
+                          //абалды синхронизация
+                          index--; //-1
+                        },
+                      );
+                    },
+                    child: const Icon(Icons.remove),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
@@ -107,9 +108,11 @@ class _MyHomePageState extends State<MyHomePage> {
               IconButton(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => EkinchiBet(count: index)));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EkinchiBet(count: index),
+                    ),
+                  );
                 },
                 icon: const Icon(
                   Icons.next_plan,
