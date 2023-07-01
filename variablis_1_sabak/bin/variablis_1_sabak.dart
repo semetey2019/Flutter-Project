@@ -1,8 +1,8 @@
 import 'dart:math';
 
 void main() {
-final number =Random().nextInt(10)+1;
-print('Random: $number'); 
+  final number = Random().nextInt(10) + 1;
+  print('Random: $number');
 }
 
 
@@ -100,6 +100,5 @@ num payiz(num a, num b) {
 // print (birMap);
 List a = <String> ["a", "b", "c", "d"];
 // лист элемент мн иштейт. жогорудагы торт тамганы 0 дон баштап эсептен
-// 0 = a, 1= b, 2= c, 3=d  болот. 
-
-
+// 0 = a, 1= b, 2= c, 3=d  болот.
+*/*/
