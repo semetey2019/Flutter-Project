@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       //ретурн кайтаруу.материал апты кайтарат
       //материал апп материалдык дизайны бар жаны флаттер колдонмосун тузот
       debugShowCheckedModeBanner: false,
-      //экрандагы дебаг деген жазууну жок кылат.фелс жалган
+      //экрандагы дебаг деген жазууну жок кылат.фолс жалган
       title: 'Flutter Demo',
-      //титл стрим техт жазуу учун колдонобуз
+      //тайтл стрим техт жазуу учун колдонобуз
       theme: ThemeData(
         //зем бул материал апка тиешелуу свойства
 
@@ -60,12 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
       //скаффолд бул экран.
       backgroundColor: Colors.white,
       appBar: AppBar(
-        //тиркеменин эн устунку болугу. текттин аты жазылышы мумкун.
+        //тиркеменин эн устунку болугу. тексттин аты жазылышы мумкун.
         //биздин тиркемеде тапшырма 1 деген соз турат
         centerTitle: true,
         backgroundColor: Colors.white,
-        title: Center(
-          child: const Text(
+        title: const Center(
+          child: Text(
             "Тапшырма 1",
             style: TextStyle(color: Colors.black),
           ),
@@ -84,11 +84,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: double.infinity,
                 height: 30,
                 child: Center(
-                    child: Text("Сан: $index",
-                        style: const TextStyle(fontSize: 20))),
+                  child: Text(
+                    "Сан: $index",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
                 decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadiusDirectional.circular(8)),
+                  color: Colors.grey,
+                  borderRadius: BorderRadiusDirectional.circular(8),
+                ),
                 //контейнердин бурчтарын кесип берет.фигурасын озгортот
               ),
               const SizedBox(
@@ -99,25 +103,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          //сетстейт-абалды озгортуу
-                          index--;
-                        });
-                      },
-                      child: const Icon(Icons.remove)),
+                    onPressed: () {
+                      setState(() {
+                        //сетстейт-абалды озгортуу
+                        index--;
+                      });
+                    },
+                    child: const Icon(Icons.remove),
+                  ),
                   const SizedBox(
                     width: 20,
                   ),
                   //сайзетбох мн эки контейнер ортосуна аралык беребиз
                   ElevatedButton(
-                      onPressed: () {
-                        //онпресет-кыймыл беруу
-                        setState(() {
-                          index++;
-                        });
-                      },
-                      child: const Icon(Icons.add))
+                    onPressed: () {
+                      //онпресет-кыймыл беруу
+                      setState(() {
+                        index++;
+                      });
+                    },
+                    child: const Icon(Icons.add),
+                  ),
                   //айкон плюс минустарды беребиз
                 ],
               ),
