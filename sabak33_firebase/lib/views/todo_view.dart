@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sabak33_firebase/views/home_view.dart';
+import 'package:sabak33_firebase/app/model.dart';
 
 class TodoView extends StatefulWidget {
   const TodoView({super.key});
@@ -16,19 +17,14 @@ class _TodoViewState extends State<TodoView> {
   final TextEditingController _authorController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 //////////////////////////////////////
-  Future<void> readData() async {
+  Future<void> addTodo() async {
     final db = FirebaseFirestore.instance;
-    await db.collection("todos").get().then((event) {
-      for (var doc in event.docs) {
-        print("${doc.id} => ${doc.data()}");
-      }
-    });
-  }
-
-  @override
-  void initState() {
-    readData();
-    super.initState();
+    final todos = Todo(
+        title: _titlecontroller.text,
+        description: _descriptioncontroller.text,
+        isCompleted: isCompleted,
+        author: _authorController.text);
+    await db.collection("todos").add(todos.toMap());
   }
 
   @override
@@ -104,15 +100,27 @@ class _TodoViewState extends State<TodoView> {
               ),
               ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                onPressed: () {
+                onPressed: () async {
                   //validate - ичине текст жазылган болсо
                   if (_formKey.currentState!.validate()) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeView(),
-                      ),
-                    );
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return SimpleDialog(
+                            backgroundColor: Colors.white.withOpacity(0.6),
+                            title:
+                                const Text('Сиздин маалыматыныз жонотулуудо'),
+                            children: const [
+                              CupertinoActivityIndicator(
+                                radius: 20,
+                                color: Colors.blue,
+                              )
+                            ],
+                          );
+                        });
+                    await addTodo();
+                    // ignore: use_build_context_synchronously
+                    Navigator.popUntil(context, (route) => route.isFirst);
                   } else {
                     null;
                   }
