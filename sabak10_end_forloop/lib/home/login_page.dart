@@ -93,24 +93,24 @@ class _LoginPageState extends State<LoginPage> {
                         FlutterLogo(
                           size: 100,
                           style: FlutterLogoStyle.horizontal,
-                          textColor: Colors.green,
+                          textColor: Colors.blue,
                         ),
                       ],
                     ),
                     const Icon(
                       Icons.favorite,
-                      color: Colors.red,
+                      color: Colors.blue,
                       size: 24.0,
                     ),
                     Text(
                       "Welcome to",
                       style: GoogleFonts.fleurDeLeah(
                         textStyle: const TextStyle(color: Colors.black),
-                        fontSize: 30,
+                        fontSize: 40,
                       ),
                     ),
                     const Text(
-                      "FREEDOM finance!",
+                      "FREEDOM Finance!",
                       style:
                           TextStyle(fontSize: 35, fontWeight: FontWeight.w500),
                     ),
