@@ -1,5 +1,5 @@
-import 'package:alma_project/widgets/CartBottomBar.dart';
-import 'package:alma_project/widgets/CartItemSamples.dart';
+import 'package:alma_project/widgets/cart_bottom_bar.dart';
+import 'package:alma_project/widgets/cart_item_samples.dart';
 import 'package:flutter/material.dart';
 
 class CartPage extends StatefulWidget {

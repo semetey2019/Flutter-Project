@@ -1,7 +1,7 @@
-import 'package:alma_project/pages/CartPage.dart';
-import 'package:alma_project/pages/OrderPage.dart';
+import 'package:alma_project/pages/cart_page.dart';
+import 'package:alma_project/pages/order_page.dart';
 import 'package:alma_project/pages/home_page.dart';
-import 'package:alma_project/widgets/itemPage.dart';
+import 'package:alma_project/widgets/item_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

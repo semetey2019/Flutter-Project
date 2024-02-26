@@ -1,5 +1,5 @@
-import 'package:alma_project/widgets/HomeBottomBar.dart';
-import 'package:alma_project/widgets/HomePagePosts.dart';
+import 'package:alma_project/widgets/home_bottom_bar.dart';
+import 'package:alma_project/widgets/home_page_posts.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
