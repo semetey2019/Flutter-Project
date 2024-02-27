@@ -1,4 +1,4 @@
-import 'package:alma_project/widgets/itemBottomBar.dart';
+import 'package:alma_project/widgets/item_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class ItemPage extends StatelessWidget {
