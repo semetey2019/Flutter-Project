@@ -31,9 +31,9 @@ class _LoginPageState extends State<LoginPage> {
                 fit: BoxFit.cover),
           ),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 FlutterLogo(
                   size: 100,
                   style: FlutterLogoStyle.horizontal,
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onPressed: () {},
               child: const Text("Login"),
-            )
+            ),
           ]),
         ),
       ),

@@ -37,12 +37,7 @@ class _CounterGetxScreen1State extends State<CounterGetxScreen1> {
             }),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (contex) => const CounterGetxScreen2(),
-                  ),
-                );
+                Navigator.pushNamed(context, 'counterGetxScreen2');
               },
               child: const Text("To secondGetx page"),
             ),

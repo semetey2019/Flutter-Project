@@ -17,11 +17,11 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Colors.pinkAccent,
           title: const Center(child: Text('Extract Widget')),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             children: [
               Column(
-                children: const [
+                children: [
                   ContainerWidget(
                     colordunAty: Colors.green,
                     conteinerdinTexti: 'container1',

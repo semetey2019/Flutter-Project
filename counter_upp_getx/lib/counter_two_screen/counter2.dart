@@ -16,6 +16,7 @@ class _CounterGetxScreen2State extends State<CounterGetxScreen2> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: const Text("2-page"),
       ),
       body: Center(
         child: Column(

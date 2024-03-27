@@ -18,7 +18,7 @@ class _TestVievState extends State<TestViev> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.green[600],
       appBar: AppBar(centerTitle: true, actions: [
         Container(
           height: 30,

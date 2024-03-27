@@ -81,12 +81,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 20,
                   ),
                   ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          index++;
-                        });
-                      },
-                      child: const Icon(Icons.add))
+                    onPressed: () {
+                      setState(() {
+                        index++;
+                      });
+                    },
+                    child: const Icon(Icons.add),
+                  ),
                 ],
               ),
             ],

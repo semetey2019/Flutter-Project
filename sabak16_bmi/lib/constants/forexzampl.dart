@@ -14,10 +14,10 @@ class _ForButtonState extends State<ForButton> {
       appBar: AppBar(
         title: const Center(child: Text('FloatingActionButton')),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Floating(),
             Floating(),
           ],
