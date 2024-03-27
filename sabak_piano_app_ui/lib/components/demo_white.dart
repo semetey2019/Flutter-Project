@@ -29,8 +29,9 @@ class _DemoWhiteKeyState extends State<DemoWhiteKey> {
           width: 70,
           height: 50,
           decoration: BoxDecoration(
-              color: isPressed ? Colors.yellow : Colors.white,
-              border: Border.all(color: Colors.black, width: 1)),
+            color: isPressed ? Colors.yellow : Colors.white,
+            border: Border.all(color: Colors.black, width: 1),
+          ),
         ),
       ),
     );

@@ -19,7 +19,7 @@ class _DemoScreenState extends State<DemoScreen> {
         child: Stack(
           children: [
             ListView.builder(
-              //итемкоунт мн 7 би 15 би каалаганча контейнер койсок болот 
+              //итемкоунт мн 7 би 15 би каалаганча контейнер койсок болот
               itemCount: 7,
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, index) {
@@ -28,8 +28,8 @@ class _DemoScreenState extends State<DemoScreen> {
               },
             ),
             //кара кнопка учун
-            Row(
-              children: const [
+            const Row(
+              children: [
                 SizedBox(
                   width: 40,
                 ),
