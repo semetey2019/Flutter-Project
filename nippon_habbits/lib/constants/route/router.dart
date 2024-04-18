@@ -8,9 +8,10 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: IntroRoute.page, initial: true),
         AutoRoute(page: SplashRoute.page),
         AutoRoute(page: Splash2Route.page),
-        // AutoRoute(page: ZikirRoute.page),
-        // AutoRoute(page: ProfileRoute.page),
+        AutoRoute(page: MainRoute.page),
+        // AutoRoute(page: JournalRoute.page),
 
-        // AutoRoute(page: DaaratRoute.page),
+        // AutoRoute(page: PracticesRoute.page),
+        //  AutoRoute(page: SettingsRoute.page),
       ];
 }
