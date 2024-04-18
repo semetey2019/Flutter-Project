@@ -1,8 +1,7 @@
 import 'dart:async';
-
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:nippon_habbits/home/home_screen.dart';
+import 'package:nippon_habbits/constants/route/router.gr.dart';
 
 @RoutePage()
 class IntroScreen extends StatefulWidget {
@@ -16,11 +15,9 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
     super.initState();
+
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
-      );
+      context.router.replace(const SplashRoute());
     });
   }
 

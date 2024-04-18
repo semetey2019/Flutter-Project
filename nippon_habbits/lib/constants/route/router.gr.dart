@@ -8,88 +8,75 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i3;
-import 'package:nippon_habbits/home/home_screen.dart' as _i1;
-import 'package:nippon_habbits/home/intro.dart' as _i2;
+import 'package:auto_route/auto_route.dart' as _i4;
+import 'package:nippon_habbits/home/intro.dart' as _i1;
+import 'package:nippon_habbits/home/onboarding.dart' as _i3;
+import 'package:nippon_habbits/home/onboarding_2.dart' as _i2;
 
-abstract class $AppRouter extends _i3.RootStackRouter {
+abstract class $AppRouter extends _i4.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i3.PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
-      return _i3.AutoRoutePage<dynamic>(
+  final Map<String, _i4.PageFactory> pagesMap = {
+    IntroRoute.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.HomePage(key: args.key),
+        child: const _i1.IntroScreen(),
       );
     },
-    IntroRoute.name: (routeData) {
-      final args = routeData.argsAs<IntroRouteArgs>(
-          orElse: () => const IntroRouteArgs());
-      return _i3.AutoRoutePage<dynamic>(
+    Splash2Route.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i2.IntroScreen(key: args.key),
+        child: const _i2.Splash2Page(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return _i4.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i3.SplashPage(),
       );
     },
   };
 }
 
 /// generated route for
-/// [_i1.HomePage]
-class HomeRoute extends _i3.PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
-    dynamic key,
-    List<_i3.PageRouteInfo>? children,
-  }) : super(
-          HomeRoute.name,
-          args: HomeRouteArgs(key: key),
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
-
-  static const _i3.PageInfo<HomeRouteArgs> page =
-      _i3.PageInfo<HomeRouteArgs>(name);
-}
-
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key});
-
-  final dynamic key;
-
-  @override
-  String toString() {
-    return 'HomeRouteArgs{key: $key}';
-  }
-}
-
-/// generated route for
-/// [_i2.IntroScreen]
-class IntroRoute extends _i3.PageRouteInfo<IntroRouteArgs> {
-  IntroRoute({
-    dynamic key,
-    List<_i3.PageRouteInfo>? children,
-  }) : super(
+/// [_i1.IntroScreen]
+class IntroRoute extends _i4.PageRouteInfo<void> {
+  const IntroRoute({List<_i4.PageRouteInfo>? children})
+      : super(
           IntroRoute.name,
-          args: IntroRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'IntroRoute';
 
-  static const _i3.PageInfo<IntroRouteArgs> page =
-      _i3.PageInfo<IntroRouteArgs>(name);
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }
 
-class IntroRouteArgs {
-  const IntroRouteArgs({this.key});
+/// generated route for
+/// [_i2.Splash2Page]
+class Splash2Route extends _i4.PageRouteInfo<void> {
+  const Splash2Route({List<_i4.PageRouteInfo>? children})
+      : super(
+          Splash2Route.name,
+          initialChildren: children,
+        );
 
-  final dynamic key;
+  static const String name = 'Splash2Route';
 
-  @override
-  String toString() {
-    return 'IntroRouteArgs{key: $key}';
-  }
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i3.SplashPage]
+class SplashRoute extends _i4.PageRouteInfo<void> {
+  const SplashRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
+
+  static const _i4.PageInfo<void> page = _i4.PageInfo<void>(name);
 }

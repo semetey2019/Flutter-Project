@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:nippon_habbits/home/intro.dart';
+import 'package:nippon_habbits/constants/route/router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final appRoute = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const IntroScreen(),
+      routerConfig: appRoute.config(),
     );
   }
 }
