@@ -76,8 +76,8 @@ class _MainPageState extends State<MainPage> {
                 _currentIndex == 0
                     ? "assets/images/habits.svg"
                     : "assets/images/habits1.svg",
-                width: 22,
-                height: 22,
+                width: 32,
+                height: 32,
               ),
               label: "Habits",
             ),
@@ -86,8 +86,8 @@ class _MainPageState extends State<MainPage> {
                 _currentIndex == 1
                     ? "assets/images/journal1.svg"
                     : "assets/images/journal.svg",
-                width: 22,
-                height: 22,
+                width: 32,
+                height: 32,
               ),
               label: "Journal",
             ),
@@ -96,8 +96,8 @@ class _MainPageState extends State<MainPage> {
                 _currentIndex == 2
                     ? "assets/images/practices1.svg"
                     : "assets/images/practices.svg",
-                width: 22,
-                height: 22,
+                width: 32,
+                height: 32,
               ),
               label: "Practices",
             ),
@@ -107,8 +107,8 @@ class _MainPageState extends State<MainPage> {
                 _currentIndex == 3
                     ? "assets/images/settings1.svg"
                     : "assets/images/settings.svg",
-                width: 22,
-                height: 22,
+                width: 32,
+                height: 32,
               ),
             ),
           ],
